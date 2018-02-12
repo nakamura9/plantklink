@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
+{% load static %}
+{% block content %}
+<h3>Graph</h3>
+<p>Graphing showcase</p>
+<div id="react-root"></div>
+{% render_bundle 'main' %}
+<ul>
+    <li><a href="{% url 'graphs:bar' %}">Bar</a></li>
+    <li><a href="/graphs/line" >Line</a></li>
+    <li><a href="/graphs/scatter">Scatter</a></li>
+    <li><a href="/graphs/compound">Compound</a></li>
+    <li><a href="/graphs/animated">Animated</a></li>
+</ul>
+
+
+{% endblock %}

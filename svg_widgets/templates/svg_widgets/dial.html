@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
+{% load static %}
+{% block content %}
+<h3>Animated line graph</h3>
+<h4>Shaded</h4>
+<div id="reactive"></div>
+<h4>UnShaded</h4>
+<div id="unshaded"></div>
+
+<h4>SVG Dial</h4>
+<p>Reads the sensor value, if no connection is present, reads -1 else reads the sensor value.</p>
+
+<div id="react-dial"></div>
+<h3>Active valve with toggle</h3>
+<div id="react-valve"></div>
+<h3>Animated bar</h3> 
+<div id="react-root"></div>
+<h3>Value Indicator</h3>
+<div id="react-indicator"></div>
+
+<div class="panel panel-primary">
+      <div class="panel-heading">
+            <h3 class="panel-title">Parameters</h3>
+      </div>
+      <div class="panel-body">
+            <form method="POST" action="{% url 'ajax:config' %}">
+                    {% csrf_token %}
+                    <label for="port-no">Select Port</label>
+                    <input type="number" name="port-no" id="id-port-no" class="form-control">
+                    <button class="btn btn-primary">Connect</button>
+            </form>
+            
+      </div>
+</div>
+
+{% render_bundle 'main' %}
+{% endblock %}

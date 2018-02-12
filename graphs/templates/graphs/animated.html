@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<h3>Animated Line</h3>
+<style>
+    .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 5px;
+    }
+</style>
+<script type="text/javascript">
+// initializing size params
+var margin = {top:20, right:20, bottom:30, left: 50},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+//set the range
+var x = d3.scaleLinear()
+    .range([0, width])
+    .domain([0,10]);
+
+var y = d3.scaleLinear()
+    .range([height, 0])
+    .domain([0, 1]);//note opposite direction
+
+//data array
+var data = new Array();
+
+//line
+var valueline = d3.line()
+    .x(function(d, i){ return x(i); }) //d.year added to the scale object
+    .y(function(d, i){ return y(d); });
+
+//adding the svg region
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform", "translate(" +margin.left+","+ margin.right+")");
+    svg.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", width)
+        .attr("height", height)
+        .attr("fill", "black");
+
+    svg.append("g")
+        .attr("transform", " translate(0,"+ height+")")
+        .call(d3.axisBottom().scale(x));
+
+    svg.append("g")
+        .call(d3.axisLeft(y));
+
+var path = svg.append("path")
+            .data([data])
+            .attr("class", "line")
+            .attr("d", valueline);
+            
+var pointer = null;
+
+setInterval(function(){
+    var last = Math.random();
+    data.push(last);
+
+    //pointer
+    if(pointer === null){
+        pointer = svg.append("circle")
+            .attr("fill", "steelblue")
+            .attr("cx", x(data.length -2))
+            .attr("cy", y(last))
+            .attr("r", 10);
+
+    }else {
+            ;
+    }
+
+    if(data.length > 10){
+        data.shift();
+        var fill = null;
+        if(data[data.length-1] > 0.7){
+            fill="red";
+        }else if(data[data.length-1] < 0.3){
+            fill="steelblue";
+        }else{
+            fill="yellow";
+        }
+        pointer.transition().attr("fill", fill)
+            .attr("cx", x(data.length -1))
+            .attr("cy", y(last));
+        //add circle tracker and vertical line
+    }
+    
+    path.transition().attr("d", valueline);
+
+}, 100);
+</script>
+
+{% endblock %}
