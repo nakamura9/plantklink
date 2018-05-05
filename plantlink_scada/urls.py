@@ -21,6 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^graphs/', include("graphs.urls", namespace="graphs")),
     url(r'^ajax/', include("ajax.urls", namespace="ajax")),
-    url(r"^react/", include("react_app.urls", namespace="react" )),
     url(r'^widgets/', include('svg_widgets.urls', namespace='widgets')),
 ]

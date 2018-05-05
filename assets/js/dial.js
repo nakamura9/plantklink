@@ -27,14 +27,15 @@ class DialWidget extends React.Component{
 
     currValue(){
         //converts the angle to a numerical input value
-        $.ajax({
+        /*$.ajax({
             url: '/ajax/get',
             method: 'GET',
             success: (resp) => {
                 this.setState({currValue: resp});
             }
         });
-        //this.setState({currValue: Math.floor(Math.random() * 10)});
+        */
+        this.setState({currValue: Math.floor(Math.random() * 10)});
         return this.state.currValue;
     }
 
@@ -77,7 +78,6 @@ class DialWidget extends React.Component{
         );
     }
 }
-
 
 class Label extends React.Component{
     /* 
@@ -189,9 +189,10 @@ class Scale extends React.Component{
 
     render(){
         var labels = this.addDialMarkers();
+        var d = this.svgArc(this.cx, this.cy, this.cx - 2, 0, this.props.scaleAngle);
         return(
             <g>
-                <path d={this.svgArc(this.cx, this.cy, this.cx - 2, 0, this.props.scaleAngle)} stroke="red" strokeWidth={2} fill="white" />
+                <path d={d} stroke="red" strokeWidth={2} fill="none" />
                 {labels}
             </g>
         );
@@ -209,7 +210,6 @@ class Needle extends React.Component {
         }
     }
 
-    
     componentDidMount(){
         this.timerID = setInterval(() =>{
             this.translate()
@@ -228,7 +228,7 @@ class Needle extends React.Component {
             return d3.interpolateString(a, "rotate(" + this.state.angle + ", "+  (this.props.width / 2) +", "+ (this.props.height / 2) +")");
         }
         needle.transition()
-            .duration(100)
+            .duration(300)
             .attrTween("transform", tween);    
         }
         

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
+{% load static %}
+{% block content %}
+
+<h3 >Active valve with toggle</h3>
+<div id="react-valve"></div>
+
+<h3>Value Indicator</h3>
+<div id="react-indicator"></div>
+
+<h3>Knob Widget</h3>
+<div id="knob"></div>
+
+{% render_bundle "main" %}
+{% endblock %}
+

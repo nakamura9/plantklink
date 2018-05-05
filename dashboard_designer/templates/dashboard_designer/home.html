@@ -2,9 +2,7 @@
 {% load render_bundle from webpack_loader %}
 {% load static %}
 {% block content %}
-
-<h3>SVG Dial</h3>
-<div id="react-dial"></div>
-
-{% render_bundle "main" %}
+<h3>Dashboard Designer</h3>
+<div id="root"></div>
+{% render_bundle "dashboard" %}
 {% endblock %}

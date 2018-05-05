@@ -18,6 +18,15 @@ class Home(TemplateView):
 class Dial(TemplateView):
     template_name = os.path.join("svg_widgets", "dial.html")
 
+class Slider(TemplateView):
+    template_name = os.path.join("svg_widgets", "slider.html")
+
+class Graphs(TemplateView):
+    template_name = os.path.join("svg_widgets", "graphs.html")
+
+class Misc(TemplateView):
+    template_name = os.path.join("svg_widgets", "misc.html")
+
 def get_val(request):
     global config
 

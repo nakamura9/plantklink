@@ -18,9 +18,7 @@ def get(request):
         if count > 10:
             return HttpResponse(-2)
     toInt= ord(val[1]) * 256 + ord(val[2])
-    print toInt
     resp = (toInt / 1024.0) * 10
-    print resp
     return HttpResponse(resp)
 
 def config(request):
@@ -29,5 +27,4 @@ def config(request):
     conn.port = "COM" + port
     conn.baudrate = 9600
     conn.open()
-    print conn.is_open
     return HttpResponseRedirect(reverse("widgets:home"))

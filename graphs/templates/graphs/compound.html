@@ -69,11 +69,10 @@ svg.selectAll("rect")
             .enter()
             .append("circle")
             .attr("cx", function(d){
-                console.log(d.year);
+                (d.year);
                 return x(d.year);
             })
             .attr("cy", function(d){
-                console.log(d.population);
                 return y(d.population);
             })
             .attr("r", 8)

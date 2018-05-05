@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'graphs',
     'ajax',
     'base',
-    'react_app',
     'svg_widgets',
     'webpack_loader',
+    'dashboard_designer',
 ]
 
 MIDDLEWARE = [

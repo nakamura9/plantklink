@@ -28,7 +28,7 @@ class AnimatedLineChart extends React.Component{
     render(){
         return(
             <svg width={this.props.width + this.margins.x} height={this.props.height + this.margins.y} >
-                <rect x={0} y={0} width={this.props.width + this.margins.x} height={this.props.height + this.margins.y} fill="steelblue" /> 
+                <rect x={this.margins.x} y={0} width={this.props.width} height={this.props.height} fill="steelblue" /> 
                 <XAxis xaxis={this.xaxis} height={this.props.height} {...this}/>
                 <YAxis yaxis={this.yaxis} xMargin={this.margins.x}/>
                 {this.props.shaded ? 
@@ -101,13 +101,15 @@ class Line extends React.Component{
                 .attr("class", "line")
                 .attr("d", this.line);
         var val;
-        $.ajax({
+        val = Math.floor(Math.random() * 10); 
+        /*$.ajax({
                     url: '/ajax/get',
                     method: 'GET',
                     success: (resp) => {
                         val =  resp;
                     }
                 });
+        */
         let temp = this.state.data;
         if(this.state.data.length > this.props.xmax){
             temp.shift();
