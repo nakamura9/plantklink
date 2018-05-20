@@ -141,7 +141,7 @@ class MultiBar extends React.Component{
             y={0}
             width={this.props.width} 
             height={this.props.height} 
-            fill="white" />
+            fill={this.props.color} />
         );
     }
 }
@@ -187,6 +187,7 @@ class MultipleAnimatedBar extends React.Component{
     }
 
     componentWillMount(){
+        console.log(this.props);
         this.bars = new Array();
         var i;
         var barWidth = Math.floor(this.props.width / this.props.nBars) - 2; 
@@ -194,12 +195,13 @@ class MultipleAnimatedBar extends React.Component{
             this.state.barVals[i] = Math.floor(Math.random() * 10);
             this.bars.push(
                 <MultiBar key={"bar_" + i.toString()} 
-                    x={this.props.margin + 
-                        (this.props.width / this.props.nBars) * i} 
-                    index={i}  
-                    updater={this.getVal.bind(this)}
-                    height={this.props.height} 
-                    width={barWidth} />);
+                          x={this.props.margin + 
+                          (this.props.width / this.props.nBars) * i} 
+                          index={i}  
+                          updater={this.getVal.bind(this)}
+                          height={this.props.height} 
+                          width={barWidth}
+                          color={this.props.fgColor} />);
         }
 
         this.timerID = setInterval(() => {
@@ -216,7 +218,7 @@ class MultipleAnimatedBar extends React.Component{
             <svg width={this.props.width + this.props.margin} height={this.props.height + this.props.margin}>
                 <YAxis yaxis={this.yaxis} xMargin={this.props.margin} />
                 <XAxis xaxis={this.xaxis} height={this.props.height} />
-                <rect fill="red" 
+                <rect fill={this.props.bgColor} 
                 x={this.props.margin} 
                 y={0} 
                 width={this.props.width} 

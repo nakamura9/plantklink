@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+{% load render_bundle from webpack_loader %}
+{% csrf_token %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Dashboard</h1>
+        <h4>Name: {{object.name}}</h4>
+        <h4>Date Created: {{object.created}}</h4>        
+    </div>
+</div>
+
+<div id="root"></div>
+
+{% render_bundle 'running_dash' %}
+{% endblock %}

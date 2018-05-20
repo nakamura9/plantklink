@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% load render_bundle from webpack_loader %}
-{% load static %}
 {% block content %}
+{% load render_bundle from webpack_loader %}
+{% csrf_token %}
 <h3>Dashboard Designer</h3>
 <div id="root"></div>
 {% render_bundle "dashboard" %}

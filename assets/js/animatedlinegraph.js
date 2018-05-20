@@ -27,17 +27,20 @@ class AnimatedLineChart extends React.Component{
     
     render(){
         return(
-            <svg width={this.props.width + this.margins.x} height={this.props.height + this.margins.y} >
-                <rect x={this.margins.x} y={0} width={this.props.width} height={this.props.height} fill="steelblue" /> 
+            <div>
+            <h5>{this.props.name}</h5>
+            <svg width={parseInt(this.props.width) + this.margins.x} height={parseInt(this.props.height) + this.margins.y} >
+                <rect x={this.margins.x} y={0} width={this.props.width} height={this.props.height} fill={this.props.bgColor} /> 
                 <XAxis xaxis={this.xaxis} height={this.props.height} {...this}/>
                 <YAxis yaxis={this.yaxis} xMargin={this.margins.x}/>
                 {this.props.shaded ? 
-                    <ShadedLine xscale={this.xscale.bind(this)} yscale={this.yscale.bind(this)} ymax={this.props.ymax} xmax={this.props.xmax}/>
+                    <ShadedLine color={this.props.fgColor} xscale={this.xscale.bind(this)} yscale={this.yscale.bind(this)} ymax={this.props.ymax} xmax={this.props.xmax}/>
                     :
-                    <Line xscale={this.xscale.bind(this)} yscale={this.yscale.bind(this)} ymax={this.props.ymax} xmax={this.props.xmax}/>
+                    <Line color={this.props.fgColor} xscale={this.xscale.bind(this)} yscale={this.yscale.bind(this)} ymax={this.props.ymax} xmax={this.props.xmax}/>
                 }
                 
             </svg>
+            </div>
         )
     }
 }
@@ -102,14 +105,7 @@ class Line extends React.Component{
                 .attr("d", this.line);
         var val;
         val = Math.floor(Math.random() * 10); 
-        /*$.ajax({
-                    url: '/ajax/get',
-                    method: 'GET',
-                    success: (resp) => {
-                        val =  resp;
-                    }
-                });
-        */
+        
         let temp = this.state.data;
         if(this.state.data.length > this.props.xmax){
             temp.shift();
@@ -132,7 +128,7 @@ class Line extends React.Component{
     render(){
         return(
             <g>
-                <path id="line" strokeWidth={2} stroke="white" fill="none" />
+                <path id="line" strokeWidth={2} stroke={this.props.color} fill="none" />
                 <circle id="pointer" cx={0} cy={0} r={5} fill={
                     this.state.data[this.state.data.length - 1] > 5 ? 
                     "green"
@@ -220,7 +216,7 @@ class ShadedLine extends React.Component{
         return(
             <g>
                 <path id="sline" strokeWidth={2} stroke="white" fill="none" />
-                <path id="area" strokeWidth={0} stroke="white" fill="white" />
+                <path id="area" strokeWidth={0} stroke={this.props.color} fill={this.props.color} />
                 <circle id="spointer" cx={0} cy={0} r={5} fill={
                     this.state.data[this.state.data.length - 1] > 5 ? 
                     "green"

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>Dashboard List</h1>
+        <p>List of created Dashboards</p>
+        <p>
+            <a href="{% url 'dashboard:designer' %}" class="btn btn-primary btn-lg">Create New</a>
+        </p>
+    </div>
+</div>
+<style>
+    .head {
+        background-color: blue;
+        margin: 2px;
+        padding: 5px;
+        color: white;
+        border: 1px solid white;
+        text-align: center;
+
+    }
+</style>
+<div>
+    {% if is_paginated %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                <li class="previous"><a href="?page={{page_obj.previous_page_number}}">
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                </a></li>
+                {% else %}
+                <li class="disabled"><span>
+                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                </span></li>
+                {% endif %}
+    
+                {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                    <li class="active"><span>{{i}}</span></li>
+                    {% else %}
+                    <li><a href="?page={{i}}">{{i}}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <li class="next"><a href="?page={{page_obj.next_page_number}}">
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                </a></li>
+                {% else %}
+                <li class="disabled"><span>
+                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                </span></li>
+                {% endif %}
+                
+            </ul>
+            {% endif %}
+</div>
+<div class="well">
+        <table class="table">
+                <thead>
+                    <tr>
+                        <td class="head">Date Created</td>
+                        <td class="head">Name</td>
+                        <td class="head">Actions</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dash in object_list %}
+                    <tr>
+                        <td>{{dash.created}}</td>
+                        <td>{{dash.name}}</td>
+                        <td>
+                            
+                            <a href="{% url 'dashboard:dashboard' dash.pk %}" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-th" aria-hidden="true"></span>        
+                        </a>
+                        <a href="{% url 'dashboard:delete' dash.pk %}" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>        
+                    </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+</div>
+
+{% endblock %}

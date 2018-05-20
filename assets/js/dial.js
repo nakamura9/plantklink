@@ -61,17 +61,23 @@ class DialWidget extends React.Component{
     render(){
         return(
             <svg width={this.props.width} height={this.props.height}>
+                <rect x={0} y={0} 
+                      width={this.props.width} 
+                      height={this.props.height}
+                      fill = {this.props.bgColor} />
                 <Scale width={this.props.width -10} 
                         height={this.props.height-10} 
                         scaleAngle={this.props.scaleAngle} 
                         rangeLower={this.props.rangeLower} 
                         rangeUpper={this.props.rangeUpper} 
-                        scaleDivisions={this.props.scaleDivisions} />
+                        scaleDivisions={this.props.scaleDivisions}
+                        color={this.props.scaleColor} />
                 
                     <Needle parentState={this.getAngle.bind(this)} 
-                        width={this.props.width} height={this.props.height} angle={this.state.angle} />
-                    <text x={(this.props.width / 2) - 5} 
-                        y={(this.props.height / 2) - (this.props.height / 10) }>
+                        width={this.props.width} height={this.props.height} angle={this.state.angle}
+                        color={this.props.scaleColor} />
+                    <text x={(this.props.width / 2) - 15} 
+                        y={(this.props.height / 2) +18} fill="white" fontSize={48}>
                                 {this.state.currValue}
                     </text>
             </svg>
@@ -117,7 +123,7 @@ class Label extends React.Component{
             <g >
                 <text fontSize="12" x={linePoints.xx} y={linePoints.yy + 12}>{this.props.value}</text>
                 <line x1={linePoints.x} y1={linePoints.y} x2={linePoints.xx} 
-                    y2={linePoints.yy} stroke="red" strokeWidth={5} /> 
+                    y2={linePoints.yy} stroke={this.props.color} strokeWidth={5} /> 
             </g>
         )
     }
@@ -181,7 +187,7 @@ class Scale extends React.Component{
             var coords =this.polarToCartesian(this.cx, this.cy, 
                     this.cx -2, angleDeg)
 
-            var label = (<Label key={"dial-label-" + i} cy={coords.y} cx={coords.x} value={this.props.rangeLower + (i * resolution)} angle={angleDeg} />)
+            var label = (<Label key={"dial-label-" + i} color={this.props.color} cy={coords.y} cx={coords.x} value={this.props.rangeLower + (i * resolution)} angle={angleDeg} />)
             labels.push(label);
         }
         return labels;
@@ -192,7 +198,7 @@ class Scale extends React.Component{
         var d = this.svgArc(this.cx, this.cy, this.cx - 2, 0, this.props.scaleAngle);
         return(
             <g>
-                <path d={d} stroke="red" strokeWidth={2} fill="none" />
+                <path d={d} stroke={this.props.color} strokeWidth={2} fill="none" />
                 {labels}
             </g>
         );
@@ -213,7 +219,7 @@ class Needle extends React.Component {
     componentDidMount(){
         this.timerID = setInterval(() =>{
             this.translate()
-        }, 200);
+        }, 1000);
     }
 
     componentWillUnmount(){
@@ -228,16 +234,16 @@ class Needle extends React.Component {
             return d3.interpolateString(a, "rotate(" + this.state.angle + ", "+  (this.props.width / 2) +", "+ (this.props.height / 2) +")");
         }
         needle.transition()
-            .duration(300)
+            .duration(800)
             .attrTween("transform", tween);    
         }
         
     render(){
         return(
             <g>
-                <circle cx={this.props.width / 2} cy={this.props.height / 2} r={this.props.height / 15} fill="red" />
+                <circle cx={this.props.width / 2} cy={this.props.height / 2} r={this.props.height / 10} fill={this.props.color} />
                 <line x1={this.props.width / 2} y1={this.props.height / 2} 
-                x2={this.state.x} y2={this.state.y} style={{stroke: "rgb(255,0,0)", strokeWidth:"2"}} />
+                x2={this.state.x} y2={this.state.y} style={{stroke: this.props.color, strokeWidth:"4"}} />
             </g>
         );
     }       

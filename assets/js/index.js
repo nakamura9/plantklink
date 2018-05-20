@@ -8,6 +8,8 @@ import {AnimatedBar, MultipleAnimatedBar} from './bar';
 
 import DialWidget from './dial';
 
+import ArcDial from './arcdial';
+
 import Indicator from './indicator';
 
 import Valve from './valve';
@@ -26,7 +28,7 @@ if(vslider){
 
 var dial = document.getElementById("react-dial");
 if(dial){
-    ReactDOM.render(<DialWidget width={300} height={300} scaleAngle={90} rangeLower={0} rangeUpper={10} scaleDivisions={5} />, dial);
+    ReactDOM.render(<DialWidget color="blue" width={300} height={300} scaleAngle={90} rangeLower={0} rangeUpper={10} scaleDivisions={5} />, dial);
 }
 
 var uniBar = document.getElementById("react-root");
@@ -62,6 +64,11 @@ if(line){
 var aniLine = document.getElementById("unshaded");
 if(aniLine){
     ReactDOM.render(<AnimatedLineChart shaded={false} nIntervals={10} xmin={0} xmax={10} ymax={12} ymin={0} width={300} height={150} />, aniLine);
+}
+
+var arcDial = document.getElementById('dial-arc');
+if(arcDial){
+    ReactDOM.render(<ArcDial angleExtent={180} color="blue" backgroundColor="cyan" rangeUpper={100} width={200} height={200} arcThickness={40} labelSize={48}/>, arcDial);
 }
 
 var aniBar = document.getElementById("bar-animated");
