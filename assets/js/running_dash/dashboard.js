@@ -50,6 +50,7 @@ class Col extends Component{
             widget: <div></div>
         };
     }
+   
 
     componentDidMount(){
         switch(this.props.widgetType){

@@ -60,13 +60,15 @@ class DialWidget extends React.Component{
 
     render(){
         return(
+            <div>
+            <h5>{this.props.name}</h5>
             <svg width={this.props.width} height={this.props.height}>
                 <rect x={0} y={0} 
                       width={this.props.width} 
                       height={this.props.height}
                       fill = {this.props.bgColor} />
-                <Scale width={this.props.width -10} 
-                        height={this.props.height-10} 
+                <Scale width={this.props.width} 
+                        height={this.props.height} 
                         scaleAngle={this.props.scaleAngle} 
                         rangeLower={this.props.rangeLower} 
                         rangeUpper={this.props.rangeUpper} 
@@ -81,6 +83,7 @@ class DialWidget extends React.Component{
                                 {this.state.currValue}
                     </text>
             </svg>
+            </div>
         );
     }
 }
@@ -119,11 +122,13 @@ class Label extends React.Component{
 
     render(){
         let linePoints = this.markerPoints(); 
+        //<line x1={linePoints.x} y1={linePoints.y} x2={linePoints.xx} y2={linePoints.yy} stroke={this.props.color} strokeWidth={5} />
         return(
-            <g >
-                <text fontSize="12" x={linePoints.xx} y={linePoints.yy + 12}>{this.props.value}</text>
-                <line x1={linePoints.x} y1={linePoints.y} x2={linePoints.xx} 
-                    y2={linePoints.yy} stroke={this.props.color} strokeWidth={5} /> 
+            <g transform={"rotate(" + this.props.angle + "," + this.props.cx + "," + this.props.cy + ")"}>
+                <text transform={"rotate("+ (-this.props.angle) + ",24,"+ this.props.cy +")"} fontSize="16" fill={this.props.color}  x={16} y={this.props.cy + 6}>{this.props.value}</text>
+                
+                <line strokeLinecap="round" x1={3 + Math.cos(this.props.angle)} y1={this.props.cy} x2={10} 
+                    y2={this.props.cy} stroke={this.props.color} strokeWidth={5} /> 
             </g>
         )
     }
@@ -187,7 +192,7 @@ class Scale extends React.Component{
             var coords =this.polarToCartesian(this.cx, this.cy, 
                     this.cx -2, angleDeg)
 
-            var label = (<Label key={"dial-label-" + i} color={this.props.color} cy={coords.y} cx={coords.x} value={this.props.rangeLower + (i * resolution)} angle={angleDeg} />)
+            var label = (<Label key={"dial-label-" + i} color={this.props.color} cy={this.props.height /2} cx={this.props.height / 2} value={this.props.rangeLower + (i * resolution)} angle={angleDeg} />)
             labels.push(label);
         }
         return labels;
@@ -195,10 +200,11 @@ class Scale extends React.Component{
 
     render(){
         var labels = this.addDialMarkers();
-        var d = this.svgArc(this.cx, this.cy, this.cx - 2, 0, this.props.scaleAngle);
+        var stroke = 5;
+        var d = this.svgArc(this.cx, this.cy, this.cx-(stroke / 2) , 0, this.props.scaleAngle);
         return(
             <g>
-                <path d={d} stroke={this.props.color} strokeWidth={2} fill="none" />
+                <path d={d} stroke={this.props.color} strokeWidth={stroke} fill="none" />
                 {labels}
             </g>
         );
@@ -235,15 +241,22 @@ class Needle extends React.Component {
         }
         needle.transition()
             .duration(800)
-            .attrTween("transform", tween);    
+            .attrTween("transform", tween);   
         }
         
     render(){
+        var center = {
+            x:this.props.width / 2,
+            y: this.props.height / 2,
+            delta: this.props.height / 10
+        }
+
+        var polyPoints = center.x + "," + (center.y - center.delta) + " " + center.x + "," + (center.y + center.delta) + " 0," + center.y;
+        
         return(
-            <g>
-                <circle cx={this.props.width / 2} cy={this.props.height / 2} r={this.props.height / 10} fill={this.props.color} />
-                <line x1={this.props.width / 2} y1={this.props.height / 2} 
-                x2={this.state.x} y2={this.state.y} style={{stroke: this.props.color, strokeWidth:"4"}} />
+            <g >
+            <polygon points={polyPoints} style={{fill:this.props.color, strokeColor:this.props.color}}/>
+                <circle cx={center.x} cy={center.y} r={this.props.height / 10} fill={this.props.color} />
             </g>
         );
     }       

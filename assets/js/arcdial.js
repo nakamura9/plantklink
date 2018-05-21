@@ -54,17 +54,19 @@ class ArcDial extends Component{
             x: this.props.width / 2,
             y: this.props.height / 2
         }
-        var d = this.svgArc(midpoints.x, midpoints.y, 80, 0, this.props.angleExtent);
+        let radius = midpoints.x - (this.props.arcThickness / 2);
+        var d = this.svgArc(midpoints.x, midpoints.y, radius, 0, this.props.angleExtent);
 
         return(
-            <svg width={this.props.width} 
-                height={this.props.height}>
-            <rect width={this.props.width} 
+            <div>
+            <h5>{this.props.name}</h5>
+            <svg width={this.props.width} height={this.props.height}>
+                <rect width={this.props.width} 
                     height={this.props.height} 
                     x={0} 
                     y={0} 
                     fill={this.props.backgroundColor} />
-            <path d={d} 
+                <path d={d} 
                     stroke="rgb(230,230,230)" 
                     strokeWidth={this.props.arcThickness} 
                     fill="none" />
@@ -78,10 +80,15 @@ class ArcDial extends Component{
                     rangeUpper={this.props.rangeUpper} />
                 <text 
                     x={midpoints.x - (this.props.labelSize / 2)} 
-                    y={midpoints.y + (this.props.labelSize / 2)} 
+                    y={(this.props.angleExtent <= 180)
+                        ? midpoints.y
+                        : midpoints.y + (this.props.labelSize / 2)}
                     fontSize={this.props.labelSize}   
-                    fill="white">{this.state.value}</text>
+                    fill={(this.props.backgroundColor === "white")
+                            ? this.props.color
+                            : "white"}>{this.state.value}</text>
             </svg>
+            </div>
         );
     }
 }
@@ -101,7 +108,8 @@ class Arc extends Component{
         
         for(i=0; i < 60; i++){
             let curr = start + (increment * i);
-            let pathD = this.props.svgArc(100, 100, 80, 0, curr);
+            let radius = this.props.x - (this.props.arcThickness / 2);
+            let pathD = this.props.svgArc(this.props.x, this.props.y, radius, 0, curr);
             let update = (pathD, node) => {
                 d3.select(node)
                 .attr("d", pathD);
@@ -114,19 +122,10 @@ class Arc extends Component{
         var increment = this.props.angleExtent / this.props.rangeUpper;
         var oldAngle = this.state.value * increment;
         var val = this.props.getVal();
-
         var angle = increment * val;
-        
         this.setState({value: val,
                         });
-        /**let pathD = this.props.svgArc(100, 100, 80, 0, angle);
-        var node = ReactDOM.findDOMNode(this)
-        d3.select(node)
-            .attr("d", pathD);
-        */
         this.manualAnimation(oldAngle, angle, 1000);
-    
-       
             
     }
 

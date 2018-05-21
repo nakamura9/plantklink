@@ -42,13 +42,16 @@ class AnimatedBar extends React.Component{
 
     render(){
         return(
-            <svg width={this.props.width} height={this.props.height + 20}>
-                <Axis height={this.props.height} axis={this.axis} />
-                <Bar updater={this.updateVal.bind(this)} 
+            <div >
+                <h5>{this.props.name}</h5>
+                <svg width={this.props.width} height={this.props.height + 20}>
+                    <Axis height={this.props.height} axis={this.axis} />
+                    <Bar updater={this.updateVal.bind(this)} 
                     height={this.props.height} 
                     width={this.props.width} scaler={this.scale}/>
-                <text x={0} y={this.props.height + 20} fontSize={20}>{this.state.val}</text> 
-            </svg>
+                    <text x={0} y={this.props.height + 20} fontSize={20}>{this.state.val}</text> 
+                </svg>
+            </div>
         );
     }
 }
@@ -215,6 +218,8 @@ class MultipleAnimatedBar extends React.Component{
     
     render(){
         return(
+            <div >
+                <h5>{this.props.name}</h5>
             <svg width={this.props.width + this.props.margin} height={this.props.height + this.props.margin}>
                 <YAxis yaxis={this.yaxis} xMargin={this.props.margin} />
                 <XAxis xaxis={this.xaxis} height={this.props.height} />
@@ -225,6 +230,7 @@ class MultipleAnimatedBar extends React.Component{
                 height={this.props.height} />
                 {this.bars}
             </svg>
+            </div>
         );
     }
 }

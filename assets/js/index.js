@@ -28,7 +28,7 @@ if(vslider){
 
 var dial = document.getElementById("react-dial");
 if(dial){
-    ReactDOM.render(<DialWidget color="blue" width={300} height={300} scaleAngle={90} rangeLower={0} rangeUpper={10} scaleDivisions={5} />, dial);
+    ReactDOM.render(<DialWidget scaleColor="blue" bgColor="white" width={300} height={300} scaleAngle={180} rangeLower={0} rangeUpper={10} scaleDivisions={5} />, dial);
 }
 
 var uniBar = document.getElementById("react-root");
