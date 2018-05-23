@@ -782,46 +782,47 @@ Selection.prototype = selection.prototype = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_value__ = __webpack_require__(94);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__src_value__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolate", function() { return __WEBPACK_IMPORTED_MODULE_0__src_value__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_array__ = __webpack_require__(172);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__src_array__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateArray", function() { return __WEBPACK_IMPORTED_MODULE_1__src_array__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_basis__ = __webpack_require__(97);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__src_basis__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateBasis", function() { return __WEBPACK_IMPORTED_MODULE_2__src_basis__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_basisClosed__ = __webpack_require__(170);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__src_basisClosed__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateBasisClosed", function() { return __WEBPACK_IMPORTED_MODULE_3__src_basisClosed__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_date__ = __webpack_require__(173);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_4__src_date__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateDate", function() { return __WEBPACK_IMPORTED_MODULE_4__src_date__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_number__ = __webpack_require__(61);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return __WEBPACK_IMPORTED_MODULE_5__src_number__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateNumber", function() { return __WEBPACK_IMPORTED_MODULE_5__src_number__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_object__ = __webpack_require__(174);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return __WEBPACK_IMPORTED_MODULE_6__src_object__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateObject", function() { return __WEBPACK_IMPORTED_MODULE_6__src_object__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_round__ = __webpack_require__(313);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return __WEBPACK_IMPORTED_MODULE_7__src_round__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateRound", function() { return __WEBPACK_IMPORTED_MODULE_7__src_round__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__src_string__ = __webpack_require__(175);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_8__src_string__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateString", function() { return __WEBPACK_IMPORTED_MODULE_8__src_string__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__src_transform_index__ = __webpack_require__(314);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "t", function() { return __WEBPACK_IMPORTED_MODULE_9__src_transform_index__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "u", function() { return __WEBPACK_IMPORTED_MODULE_9__src_transform_index__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateTransformCss", function() { return __WEBPACK_IMPORTED_MODULE_9__src_transform_index__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateTransformSvg", function() { return __WEBPACK_IMPORTED_MODULE_9__src_transform_index__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__src_zoom__ = __webpack_require__(317);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "v", function() { return __WEBPACK_IMPORTED_MODULE_10__src_zoom__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateZoom", function() { return __WEBPACK_IMPORTED_MODULE_10__src_zoom__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__src_rgb__ = __webpack_require__(169);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_11__src_rgb__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return __WEBPACK_IMPORTED_MODULE_11__src_rgb__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return __WEBPACK_IMPORTED_MODULE_11__src_rgb__["c"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateRgb", function() { return __WEBPACK_IMPORTED_MODULE_11__src_rgb__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateRgbBasis", function() { return __WEBPACK_IMPORTED_MODULE_11__src_rgb__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateRgbBasisClosed", function() { return __WEBPACK_IMPORTED_MODULE_11__src_rgb__["c"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__src_hsl__ = __webpack_require__(318);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return __WEBPACK_IMPORTED_MODULE_12__src_hsl__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return __WEBPACK_IMPORTED_MODULE_12__src_hsl__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateHsl", function() { return __WEBPACK_IMPORTED_MODULE_12__src_hsl__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateHslLong", function() { return __WEBPACK_IMPORTED_MODULE_12__src_hsl__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__src_lab__ = __webpack_require__(319);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return __WEBPACK_IMPORTED_MODULE_13__src_lab__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateLab", function() { return __WEBPACK_IMPORTED_MODULE_13__src_lab__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__src_hcl__ = __webpack_require__(320);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return __WEBPACK_IMPORTED_MODULE_14__src_hcl__["a"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return __WEBPACK_IMPORTED_MODULE_14__src_hcl__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateHcl", function() { return __WEBPACK_IMPORTED_MODULE_14__src_hcl__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateHclLong", function() { return __WEBPACK_IMPORTED_MODULE_14__src_hcl__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__src_cubehelix__ = __webpack_require__(321);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_15__src_cubehelix__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_15__src_cubehelix__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateCubehelix", function() { return __WEBPACK_IMPORTED_MODULE_15__src_cubehelix__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interpolateCubehelixLong", function() { return __WEBPACK_IMPORTED_MODULE_15__src_cubehelix__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__src_quantize__ = __webpack_require__(322);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "w", function() { return __WEBPACK_IMPORTED_MODULE_16__src_quantize__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "quantize", function() { return __WEBPACK_IMPORTED_MODULE_16__src_quantize__["a"]; });
 
 
 
@@ -936,7 +937,7 @@ function create(node, id, self) {
   // Initialize the self timer when the transition is created.
   // Note the actual delay is not known until the first callback!
   schedules[id] = self;
-  self.timer = Object(__WEBPACK_IMPORTED_MODULE_1_d3_timer__["d" /* timer */])(schedule, 0, self.time);
+  self.timer = Object(__WEBPACK_IMPORTED_MODULE_1_d3_timer__["timer"])(schedule, 0, self.time);
 
   function schedule(elapsed) {
     self.state = SCHEDULED;
@@ -959,7 +960,7 @@ function create(node, id, self) {
       // While this element already has a starting transition during this frame,
       // defer starting an interrupting transition until that transition has a
       // chance to tick (and possibly end); see d3/d3-transition#54!
-      if (o.state === STARTED) return Object(__WEBPACK_IMPORTED_MODULE_1_d3_timer__["c" /* timeout */])(start);
+      if (o.state === STARTED) return Object(__WEBPACK_IMPORTED_MODULE_1_d3_timer__["timeout"])(start);
 
       // Interrupt the active transition, if any.
       // Dispatch the interrupt event.
@@ -984,7 +985,7 @@ function create(node, id, self) {
     // Note the transition may be canceled after start and before the first tick!
     // Note this must be scheduled before the start event; see d3/d3-transition#16!
     // Assuming this is successful, subsequent callbacks go straight to tick.
-    Object(__WEBPACK_IMPORTED_MODULE_1_d3_timer__["c" /* timeout */])(function() {
+    Object(__WEBPACK_IMPORTED_MODULE_1_d3_timer__["timeout"])(function() {
       if (self.state === STARTED) {
         self.state = RUNNING;
         self.timer.restart(tick, self.delay, self.time);
@@ -1880,29 +1881,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "treemapSquarify", function() { return __WEBPACK_IMPORTED_MODULE_14_d3_hierarchy__["o"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "treemapResquarify", function() { return __WEBPACK_IMPORTED_MODULE_14_d3_hierarchy__["l"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__ = __webpack_require__(18);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolate", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["a"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateArray", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["b"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateBasis", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["c"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateBasisClosed", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["d"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateDate", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["g"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateNumber", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["m"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateObject", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["n"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateRound", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["r"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateString", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["s"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateTransformCss", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["t"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateTransformSvg", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["u"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateZoom", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["v"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateRgb", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["o"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateRgbBasis", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["p"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateRgbBasisClosed", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["q"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateHsl", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["j"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateHslLong", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["k"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateLab", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["l"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateHcl", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["h"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateHclLong", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["i"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateCubehelix", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["e"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateCubehelixLong", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["f"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "quantize", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["w"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolate", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolate"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateArray", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateArray"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateBasis", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateBasis"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateBasisClosed", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateBasisClosed"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateDate", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateDate"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateNumber", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateNumber"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateObject", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateObject"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateRound", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateRound"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateString", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateString"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateTransformCss", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateTransformCss"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateTransformSvg", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateTransformSvg"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateZoom", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateZoom"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateRgb", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateRgb"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateRgbBasis", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateRgbBasis"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateRgbBasisClosed", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateRgbBasisClosed"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateHsl", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateHsl"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateHslLong", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateHslLong"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateLab", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateLab"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateHcl", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateHcl"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateHclLong", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateHclLong"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateCubehelix", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateCubehelix"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interpolateCubehelixLong", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["interpolateCubehelixLong"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "quantize", function() { return __WEBPACK_IMPORTED_MODULE_15_d3_interpolate__["quantize"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_d3_path__ = __webpack_require__(30);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "path", function() { return __WEBPACK_IMPORTED_MODULE_16_d3_path__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_d3_polygon__ = __webpack_require__(451);
@@ -2101,11 +2102,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "isoFormat", function() { return __WEBPACK_IMPORTED_MODULE_26_d3_time_format__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "isoParse", function() { return __WEBPACK_IMPORTED_MODULE_26_d3_time_format__["b"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_d3_timer__ = __webpack_require__(62);
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "now", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["b"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "timer", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["d"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "timerFlush", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["e"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "timeout", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["c"]; });
-/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interval", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["a"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "now", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["now"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "timer", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["timer"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "timerFlush", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["timerFlush"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "timeout", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["timeout"]; });
+/* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "interval", function() { return __WEBPACK_IMPORTED_MODULE_27_d3_timer__["interval"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_d3_transition__ = __webpack_require__(98);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "transition", function() { return __WEBPACK_IMPORTED_MODULE_28_d3_transition__["c"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "active", function() { return __WEBPACK_IMPORTED_MODULE_28_d3_transition__["a"]; });
@@ -2480,7 +2481,7 @@ function linearish(scale) {
 }
 
 function linear() {
-  var scale = Object(__WEBPACK_IMPORTED_MODULE_2__continuous__["b" /* default */])(__WEBPACK_IMPORTED_MODULE_2__continuous__["c" /* deinterpolateLinear */], __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["m" /* interpolateNumber */]);
+  var scale = Object(__WEBPACK_IMPORTED_MODULE_2__continuous__["b" /* default */])(__WEBPACK_IMPORTED_MODULE_2__continuous__["c" /* deinterpolateLinear */], __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateNumber"]);
 
   scale.copy = function() {
     return Object(__WEBPACK_IMPORTED_MODULE_2__continuous__["a" /* copy */])(scale, linear());
@@ -2872,14 +2873,15 @@ function creatorFixed(fullname) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_timer__ = __webpack_require__(99);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["b"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["c"]; });
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["d"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "now", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "timer", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["c"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "timerFlush", function() { return __WEBPACK_IMPORTED_MODULE_0__src_timer__["d"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_timeout__ = __webpack_require__(325);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__src_timeout__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "timeout", function() { return __WEBPACK_IMPORTED_MODULE_1__src_timeout__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_interval__ = __webpack_require__(326);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_2__src_interval__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "interval", function() { return __WEBPACK_IMPORTED_MODULE_2__src_interval__["a"]; });
 
 
 
@@ -3414,7 +3416,7 @@ function copy(source, target) {
 function continuous(deinterpolate, reinterpolate) {
   var domain = unit,
       range = unit,
-      interpolate = __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["a" /* interpolate */],
+      interpolate = __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolate"],
       clamp = false,
       piecewise,
       output,
@@ -3443,7 +3445,7 @@ function continuous(deinterpolate, reinterpolate) {
   };
 
   scale.rangeRound = function(_) {
-    return range = __WEBPACK_IMPORTED_MODULE_2__array__["b" /* slice */].call(_), interpolate = __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["r" /* interpolateRound */], rescale();
+    return range = __WEBPACK_IMPORTED_MODULE_2__array__["b" /* slice */].call(_), interpolate = __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateRound"], rescale();
   };
 
   scale.clamp = function(_) {
@@ -24539,10 +24541,10 @@ function one(b) {
 
 /* harmony default export */ __webpack_exports__["a"] = (function(a, b) {
   var c;
-  return (typeof b === "number" ? __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["m" /* interpolateNumber */]
-      : b instanceof __WEBPACK_IMPORTED_MODULE_0_d3_color__["color"] ? __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["o" /* interpolateRgb */]
-      : (c = Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["color"])(b)) ? (b = c, __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["o" /* interpolateRgb */])
-      : __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["s" /* interpolateString */])(a, b);
+  return (typeof b === "number" ? __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateNumber"]
+      : b instanceof __WEBPACK_IMPORTED_MODULE_0_d3_color__["color"] ? __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateRgb"]
+      : (c = Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["color"])(b)) ? (b = c, __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateRgb"])
+      : __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateString"])(a, b);
 });
 
 
@@ -24671,7 +24673,7 @@ var initialRadius = 10,
       alphaTarget = 0,
       velocityDecay = 0.6,
       forces = Object(__WEBPACK_IMPORTED_MODULE_1_d3_collection__["c" /* map */])(),
-      stepper = Object(__WEBPACK_IMPORTED_MODULE_2_d3_timer__["d" /* timer */])(step),
+      stepper = Object(__WEBPACK_IMPORTED_MODULE_2_d3_timer__["timer"])(step),
       event = Object(__WEBPACK_IMPORTED_MODULE_0_d3_dispatch__["a" /* dispatch */])("tick", "end");
 
   if (nodes == null) nodes = [];
@@ -26565,7 +26567,7 @@ function number(t) {
 }
 
 function calendar(year, month, week, day, hour, minute, second, millisecond, format) {
-  var scale = Object(__WEBPACK_IMPORTED_MODULE_5__continuous__["b" /* default */])(__WEBPACK_IMPORTED_MODULE_5__continuous__["c" /* deinterpolateLinear */], __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["m" /* interpolateNumber */]),
+  var scale = Object(__WEBPACK_IMPORTED_MODULE_5__continuous__["b" /* default */])(__WEBPACK_IMPORTED_MODULE_5__continuous__["c" /* deinterpolateLinear */], __WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateNumber"]),
       invert = scale.invert,
       domain = scale.domain;
 
@@ -29150,7 +29152,7 @@ function brush(dim) {
                 emit = emitter(that, arguments),
                 selection0 = state.selection,
                 selection1 = dim.input(typeof selection === "function" ? selection.apply(this, arguments) : selection, state.extent),
-                i = Object(__WEBPACK_IMPORTED_MODULE_2_d3_interpolate__["a" /* interpolate */])(selection0, selection1);
+                i = Object(__WEBPACK_IMPORTED_MODULE_2_d3_interpolate__["interpolate"])(selection0, selection1);
 
             function tween(t) {
               state.selection = t === 1 && empty(selection1) ? null : i(t);
@@ -31374,7 +31376,7 @@ function inherit(node, id) {
   var timing;
   while (!(timing = node.__transition) || !(timing = timing[id])) {
     if (!(node = node.parentNode)) {
-      return defaultTiming.time = Object(__WEBPACK_IMPORTED_MODULE_3_d3_timer__["b" /* now */])(), defaultTiming;
+      return defaultTiming.time = Object(__WEBPACK_IMPORTED_MODULE_3_d3_timer__["now"])(), defaultTiming;
     }
   }
   return timing;
@@ -31387,7 +31389,7 @@ function inherit(node, id) {
   if (name instanceof __WEBPACK_IMPORTED_MODULE_0__transition_index__["a" /* Transition */]) {
     id = name._id, name = name._name;
   } else {
-    id = Object(__WEBPACK_IMPORTED_MODULE_0__transition_index__["c" /* newId */])(), (timing = defaultTiming).time = Object(__WEBPACK_IMPORTED_MODULE_3_d3_timer__["b" /* now */])(), name = name == null ? null : name + "";
+    id = Object(__WEBPACK_IMPORTED_MODULE_0__transition_index__["c" /* newId */])(), (timing = defaultTiming).time = Object(__WEBPACK_IMPORTED_MODULE_3_d3_timer__["now"])(), name = name == null ? null : name + "";
   }
 
   for (var groups = this._groups, m = groups.length, j = 0; j < m; ++j) {
@@ -31479,7 +31481,7 @@ function attrFunctionNS(fullname, interpolate, value) {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (function(name, value) {
-  var fullname = Object(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["i" /* namespace */])(name), i = fullname === "transform" ? __WEBPACK_IMPORTED_MODULE_0_d3_interpolate__["u" /* interpolateTransformSvg */] : __WEBPACK_IMPORTED_MODULE_3__interpolate__["a" /* default */];
+  var fullname = Object(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["i" /* namespace */])(name), i = fullname === "transform" ? __WEBPACK_IMPORTED_MODULE_0_d3_interpolate__["interpolateTransformSvg"] : __WEBPACK_IMPORTED_MODULE_3__interpolate__["a" /* default */];
   return this.attrTween(name, typeof value === "function"
       ? (fullname.local ? attrFunctionNS : attrFunction)(fullname, i, Object(__WEBPACK_IMPORTED_MODULE_2__tween__["b" /* tweenValue */])(this, "attr." + name, value))
       : value == null ? (fullname.local ? attrRemoveNS : attrRemove)(fullname)
@@ -31865,7 +31867,7 @@ function styleFunction(name, interpolate, value) {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (function(name, value, priority) {
-  var i = (name += "") === "transform" ? __WEBPACK_IMPORTED_MODULE_0_d3_interpolate__["t" /* interpolateTransformCss */] : __WEBPACK_IMPORTED_MODULE_3__interpolate__["a" /* default */];
+  var i = (name += "") === "transform" ? __WEBPACK_IMPORTED_MODULE_0_d3_interpolate__["interpolateTransformCss"] : __WEBPACK_IMPORTED_MODULE_3__interpolate__["a" /* default */];
   return value == null ? this
           .styleTween(name, styleRemove(name, i))
           .on("end.style." + name, styleRemoveEnd(name))
@@ -38885,7 +38887,7 @@ var parseIso = +new Date("2000-01-01T00:00:00.000Z")
 
 
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["f" /* interpolateCubehelixLong */])(Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(300, 0.5, 0.0), Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(-240, 0.5, 1.0)));
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateCubehelixLong"])(Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(300, 0.5, 0.0), Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(-240, 0.5, 1.0)));
 
 
 /***/ }),
@@ -38900,9 +38902,9 @@ var parseIso = +new Date("2000-01-01T00:00:00.000Z")
 
 
 
-var warm = Object(__WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["f" /* interpolateCubehelixLong */])(Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(-100, 0.75, 0.35), Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(80, 1.50, 0.8));
+var warm = Object(__WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateCubehelixLong"])(Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(-100, 0.75, 0.35), Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(80, 1.50, 0.8));
 
-var cool = Object(__WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["f" /* interpolateCubehelixLong */])(Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(260, 0.75, 0.35), Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(80, 1.50, 0.8));
+var cool = Object(__WEBPACK_IMPORTED_MODULE_1_d3_interpolate__["interpolateCubehelixLong"])(Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(260, 0.75, 0.35), Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])(80, 1.50, 0.8));
 
 var rainbow = Object(__WEBPACK_IMPORTED_MODULE_0_d3_color__["cubehelix"])();
 
@@ -40923,7 +40925,7 @@ function defaultConstrain(transform, extent, translateExtent) {
       scaleExtent = [0, Infinity],
       translateExtent = [[-Infinity, -Infinity], [Infinity, Infinity]],
       duration = 250,
-      interpolate = __WEBPACK_IMPORTED_MODULE_2_d3_interpolate__["v" /* interpolateZoom */],
+      interpolate = __WEBPACK_IMPORTED_MODULE_2_d3_interpolate__["interpolateZoom"],
       gestures = [],
       listeners = Object(__WEBPACK_IMPORTED_MODULE_0_d3_dispatch__["a" /* dispatch */])("start", "zoom", "end"),
       touchstarting,
@@ -41824,7 +41826,7 @@ var Label = function (_React$Component2) {
     }
 
     _createClass(Label, [{
-        key: 'polarToCartesian',
+        key: 'render',
 
         /* 
         One of multiple components inserted along the dial scale.
@@ -41834,33 +41836,8 @@ var Label = function (_React$Component2) {
         cy - lower left corner position y value
         value- the label value 
         */
-        value: function polarToCartesian(cx, cy, r, angleDeg) {
-            /*
-            Converts polar form to cartesian form. Polar form consists of an
-            angle and a magnitude. these are measured from center r
-            Function returns an object of x and y values for pixels. */
-            var angleInRad = angleDeg * Math.PI / 180;
-            return {
-                x: cx + r * Math.cos(angleInRad),
-                y: cy + r * Math.sin(angleInRad)
-            };
-        }
-    }, {
-        key: 'markerPoints',
-        value: function markerPoints() {
-            var end = this.polarToCartesian(this.props.cx, this.props.cy, 10, this.props.angle);
-            return {
-                x: this.props.cx,
-                y: this.props.cy,
-                xx: end.x,
-                yy: end.y
-            };
-        }
-    }, {
-        key: 'render',
+
         value: function render() {
-            var linePoints = this.markerPoints();
-            //<line x1={linePoints.x} y1={linePoints.y} x2={linePoints.xx} y2={linePoints.yy} stroke={this.props.color} strokeWidth={5} />
             return _react2.default.createElement(
                 'g',
                 { transform: "rotate(" + this.props.angle + "," + this.props.cx + "," + this.props.cy + ")" },
@@ -41943,7 +41920,11 @@ var Scale = function (_React$Component3) {
                 var angleDeg = this.props.scaleAngle / this.props.scaleDivisions * i;
                 var coords = this.polarToCartesian(this.cx, this.cy, this.cx - 2, angleDeg);
 
-                var label = _react2.default.createElement(Label, { key: "dial-label-" + i, color: this.props.color, cy: this.props.height / 2, cx: this.props.height / 2, value: this.props.rangeLower + i * resolution, angle: angleDeg });
+                var label = _react2.default.createElement(Label, { key: "dial-label-" + i,
+                    color: this.props.color,
+                    cy: this.props.height / 2,
+                    cx: this.props.height / 2,
+                    value: this.props.rangeLower + i * resolution, angle: angleDeg });
                 labels.push(label);
             }
             return labels;
@@ -42058,6 +42039,10 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 var _d = __webpack_require__(36);
 
 var d3 = _interopRequireWildcard(_d);
+
+var _Animate = __webpack_require__(790);
+
+var _Animate2 = _interopRequireDefault(_Animate);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -42186,39 +42171,26 @@ var Arc = function (_Component2) {
 
         var _this2 = _possibleConstructorReturn(this, (Arc.__proto__ || Object.getPrototypeOf(Arc)).call(this, props));
 
+        _this2.radius = _this2.props.x - _this2.props.arcThickness / 2;
+        _this2.initPathD = _this2.props.svgArc(_this2.props.x, _this2.props.y, _this2.radius, 0, 0);
         _this2.state = {
-            value: 0
+            value: 0,
+            d: _this2.initPathD
         };
         return _this2;
     }
 
     _createClass(Arc, [{
-        key: 'manualAnimation',
-        value: function manualAnimation(start, stop, duration) {
-            var increment = (stop - start) / 60;
-            var i;
-            var node = _reactDom2.default.findDOMNode(this);
-
-            for (i = 0; i < 60; i++) {
-                var curr = start + increment * i;
-                var radius = this.props.x - this.props.arcThickness / 2;
-                var pathD = this.props.svgArc(this.props.x, this.props.y, radius, 0, curr);
-                var update = function update(pathD, node) {
-                    d3.select(node).attr("d", pathD);
-                };
-                setTimeout(update, duration / 60, pathD, node);
-            }
-        }
-    }, {
         key: 'tick',
         value: function tick() {
             var increment = this.props.angleExtent / this.props.rangeUpper;
             var oldAngle = this.state.value * increment;
             var val = this.props.getVal();
             var angle = increment * val;
-            this.setState({ value: val
+            var pathD = this.props.svgArc(this.props.x, this.props.y, this.radius, 0, angle);
+            this.setState({ value: val,
+                d: pathD
             });
-            this.manualAnimation(oldAngle, angle, 1000);
         }
     }, {
         key: 'componentDidMount',
@@ -42237,7 +42209,28 @@ var Arc = function (_Component2) {
     }, {
         key: 'render',
         value: function render() {
-            return _react2.default.createElement('path', { d: this.state.d, stroke: this.props.color, strokeWidth: this.props.arcThickness, fill: 'none' });
+            var _this4 = this;
+
+            return _react2.default.createElement(
+                _Animate2.default,
+                { start: function start() {
+                        return {
+                            value: 0,
+                            d: _this4.initPathD
+                        };
+                    },
+                    update: function update() {
+                        return {
+                            value: _this4.state.value,
+                            d: _this4.state.d,
+                            timing: { duration: 500,
+                                ease: d3.easeBackOut }
+                        };
+                    } },
+                function (state) {
+                    return _react2.default.createElement('path', { d: _this4.state.d, stroke: _this4.props.color, strokeWidth: _this4.props.arcThickness, fill: 'none' });
+                }
+            );
         }
     }]);
 
@@ -43455,6 +43448,785 @@ var KnobScale = function (_React$Component3) {
 }(_react2.default.Component);
 
 exports.default = KnobWidget;
+
+/***/ }),
+/* 626 */,
+/* 627 */,
+/* 628 */,
+/* 629 */,
+/* 630 */,
+/* 631 */,
+/* 632 */,
+/* 633 */,
+/* 634 */,
+/* 635 */,
+/* 636 */,
+/* 637 */,
+/* 638 */,
+/* 639 */,
+/* 640 */,
+/* 641 */,
+/* 642 */,
+/* 643 */,
+/* 644 */,
+/* 645 */,
+/* 646 */,
+/* 647 */,
+/* 648 */,
+/* 649 */,
+/* 650 */,
+/* 651 */,
+/* 652 */,
+/* 653 */,
+/* 654 */,
+/* 655 */,
+/* 656 */,
+/* 657 */,
+/* 658 */,
+/* 659 */,
+/* 660 */,
+/* 661 */,
+/* 662 */,
+/* 663 */,
+/* 664 */,
+/* 665 */,
+/* 666 */,
+/* 667 */,
+/* 668 */,
+/* 669 */,
+/* 670 */,
+/* 671 */,
+/* 672 */,
+/* 673 */,
+/* 674 */,
+/* 675 */,
+/* 676 */,
+/* 677 */,
+/* 678 */,
+/* 679 */,
+/* 680 */,
+/* 681 */,
+/* 682 */,
+/* 683 */,
+/* 684 */,
+/* 685 */,
+/* 686 */,
+/* 687 */,
+/* 688 */,
+/* 689 */,
+/* 690 */,
+/* 691 */,
+/* 692 */,
+/* 693 */,
+/* 694 */,
+/* 695 */,
+/* 696 */,
+/* 697 */,
+/* 698 */,
+/* 699 */,
+/* 700 */,
+/* 701 */,
+/* 702 */,
+/* 703 */,
+/* 704 */,
+/* 705 */,
+/* 706 */,
+/* 707 */,
+/* 708 */,
+/* 709 */,
+/* 710 */,
+/* 711 */,
+/* 712 */,
+/* 713 */,
+/* 714 */,
+/* 715 */,
+/* 716 */,
+/* 717 */,
+/* 718 */,
+/* 719 */,
+/* 720 */,
+/* 721 */,
+/* 722 */,
+/* 723 */,
+/* 724 */,
+/* 725 */,
+/* 726 */,
+/* 727 */,
+/* 728 */,
+/* 729 */,
+/* 730 */,
+/* 731 */,
+/* 732 */,
+/* 733 */,
+/* 734 */,
+/* 735 */,
+/* 736 */,
+/* 737 */,
+/* 738 */,
+/* 739 */,
+/* 740 */,
+/* 741 */,
+/* 742 */,
+/* 743 */,
+/* 744 */,
+/* 745 */,
+/* 746 */,
+/* 747 */,
+/* 748 */,
+/* 749 */,
+/* 750 */,
+/* 751 */,
+/* 752 */,
+/* 753 */,
+/* 754 */,
+/* 755 */,
+/* 756 */,
+/* 757 */,
+/* 758 */,
+/* 759 */,
+/* 760 */,
+/* 761 */,
+/* 762 */,
+/* 763 */,
+/* 764 */,
+/* 765 */,
+/* 766 */,
+/* 767 */,
+/* 768 */,
+/* 769 */,
+/* 770 */,
+/* 771 */,
+/* 772 */,
+/* 773 */,
+/* 774 */,
+/* 775 */,
+/* 776 */,
+/* 777 */,
+/* 778 */,
+/* 779 */,
+/* 780 */,
+/* 781 */,
+/* 782 */,
+/* 783 */,
+/* 784 */,
+/* 785 */,
+/* 786 */,
+/* 787 */,
+/* 788 */,
+/* 789 */,
+/* 790 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.default = undefined;
+
+var _Animate = __webpack_require__(791);
+
+var _Animate2 = _interopRequireDefault(_Animate);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _Animate2.default; /* eslint-disable flowtype/require-valid-file-annotation */
+
+/***/ }),
+/* 791 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _d3Timer = __webpack_require__(62);
+
+var _transition = __webpack_require__(792);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } //  weak
+/* eslint max-len: "off" */
+
+var Animate = function (_Component) {
+  _inherits(Animate, _Component);
+
+  function Animate() {
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Animate);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = typeof _this.props.start === 'function' ? _this.props.start() : _this.props.start, _this.checkTransitionStatus = function () {
+      if (!_this.TRANSITION_SCHEDULES) {
+        _this.interval.stop();
+
+        if (_this.props.show === false) {
+          _this.renderNull = true;
+          _this.setState(function (prevState) {
+            return prevState;
+          }); // force render as null
+        }
+      }
+    }, _this.interval = null, _this.renderNull = true, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  Animate.prototype.componentWillMount = function componentWillMount() {
+    if (this.props.show === true) {
+      this.renderNull = false;
+    }
+  };
+
+  Animate.prototype.componentDidMount = function componentDidMount() {
+    var _props = this.props,
+        enter = _props.enter,
+        show = _props.show;
+
+
+    if (enter && show === true) {
+      _transition.transition.call(this, typeof enter === 'function' ? enter() : enter);
+    }
+  };
+
+  Animate.prototype.componentWillReceiveProps = function componentWillReceiveProps(next) {
+    var _this2 = this;
+
+    var show = next.show,
+        start = next.start,
+        enter = next.enter,
+        update = next.update,
+        leave = next.leave;
+
+
+    if (this.props.show === false && this.renderNull === true && show === true) {
+      this.renderNull = false;
+
+      this.setState(function () {
+        return typeof start === 'function' ? start() : start;
+      }, function () {
+        if (enter) {
+          _transition.transition.call(_this2, typeof enter === 'function' ? enter() : enter);
+        }
+      });
+    } else if (this.props.show === true && show === false) {
+      if (leave) {
+        _transition.transition.call(this, typeof leave === 'function' ? leave() : leave);
+        this.interval = (0, _d3Timer.interval)(this.checkTransitionStatus);
+      } else {
+        this.renderNull = true;
+        this.setState(function (prevState) {
+          return prevState;
+        }); // force render as null
+      }
+    } else if (show === true && update) {
+      if (this.interval) {
+        this.interval.stop();
+      }
+
+      _transition.transition.call(this, typeof update === 'function' ? update() : update);
+    }
+  };
+
+  Animate.prototype.componentWillUnmount = function componentWillUnmount() {
+    if (this.interval) {
+      this.interval.stop();
+    }
+
+    _transition.stop.call(this);
+  };
+
+  Animate.prototype.render = function render() {
+    if (this.renderNull === true) {
+      return null;
+    }
+
+    var renderedChildren = this.props.children(this.state);
+    return renderedChildren && _react2.default.Children.only(renderedChildren);
+  };
+
+  return Animate;
+}(_react.Component);
+
+Animate.defaultProps = {
+  show: true
+};
+exports.default = Animate;
+
+/***/ }),
+/* 792 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _transition = __webpack_require__(793);
+
+Object.defineProperty(exports, 'transition', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_transition).default;
+  }
+});
+
+var _stop = __webpack_require__(796);
+
+Object.defineProperty(exports, 'stop', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_stop).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 793 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.preset = undefined;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //  weak
+
+exports.newId = newId;
+exports.default = transition;
+
+var _d3Timer = __webpack_require__(62);
+
+var _tween = __webpack_require__(794);
+
+var _tween2 = _interopRequireDefault(_tween);
+
+var _schedule = __webpack_require__(795);
+
+var _schedule2 = _interopRequireDefault(_schedule);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function once(func) {
+  var called = false;
+
+  return function transitionEvent() {
+    if (!called) {
+      called = true;
+      func.call(this);
+    }
+  };
+}
+
+var id = 0;
+
+function newId() {
+  return ++id;
+}
+
+// from https://github.com/d3/d3-ease/blob/master/src/linear.js
+function linear(t) {
+  return +t;
+}
+
+var preset = exports.preset = {
+  time: null,
+  delay: 0,
+  duration: 250,
+  ease: linear
+};
+
+function scheduleTransitions() {
+  var _this = this;
+
+  var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  var transitions = _extends({}, config);
+
+  var events = transitions.events || {};
+  delete transitions.events;
+
+  // each event handler should be called only once
+  Object.keys(events).forEach(function (d) {
+    if (typeof events[d] !== 'function') {
+      throw new Error('Event handlers must be a function');
+    } else {
+      events[d] = once(events[d]);
+    }
+  });
+
+  var timing = transitions.timing || {};
+  delete transitions.timing;
+
+  Object.keys(transitions).forEach(function (stateKey) {
+    var tweens = [];
+
+    if (_typeof(transitions[stateKey]) === 'object' && Array.isArray(transitions[stateKey]) === false) {
+      Object.keys(transitions[stateKey]).forEach(function (attr) {
+        var val = transitions[stateKey][attr];
+
+        if (Array.isArray(val)) {
+          if (val.length === 1) {
+            tweens.push(_tween2.default.call(_this, stateKey, attr, val[0]));
+          } else {
+            _this.setState(function (state) {
+              var _extends2, _ref;
+
+              return _ref = {}, _ref[stateKey] = _extends({}, state[stateKey], (_extends2 = {}, _extends2[attr] = val[0], _extends2)), _ref;
+            });
+
+            tweens.push(_tween2.default.call(_this, stateKey, attr, val[1]));
+          }
+        } else if (typeof val === 'function') {
+          var getResonanceCustomTween = function getResonanceCustomTween() {
+            var resonanceCustomTween = function resonanceCustomTween(t) {
+              _this.setState(function (state) {
+                var _extends3, _ref2;
+
+                return _ref2 = {}, _ref2[stateKey] = _extends({}, state[stateKey], (_extends3 = {}, _extends3[attr] = val(t), _extends3)), _ref2;
+              });
+            };
+
+            return resonanceCustomTween;
+          };
+
+          tweens.push(getResonanceCustomTween);
+        } else {
+          _this.setState(function (state) {
+            var _extends4, _ref3;
+
+            return _ref3 = {}, _ref3[stateKey] = _extends({}, state[stateKey], (_extends4 = {}, _extends4[attr] = val, _extends4)), _ref3;
+          });
+          // This assures any existing transitions are stopped
+          tweens.push(_tween2.default.call(_this, stateKey, attr, val));
+        }
+      });
+    } else {
+      var val = transitions[stateKey];
+
+      if (Array.isArray(val)) {
+        if (val.length === 1) {
+          tweens.push(_tween2.default.call(_this, null, stateKey, val[0]));
+        } else {
+          _this.setState(function () {
+            var _ref4;
+
+            return _ref4 = {}, _ref4[stateKey] = val[0], _ref4;
+          });
+
+          tweens.push(_tween2.default.call(_this, null, stateKey, val[1]));
+        }
+      } else if (typeof val === 'function') {
+        var getResonanceCustomTween = function getResonanceCustomTween() {
+          var resonanceCustomTween = function resonanceCustomTween(t) {
+            _this.setState(function () {
+              var _ref5;
+
+              return _ref5 = {}, _ref5[stateKey] = val(t), _ref5;
+            });
+          };
+
+          return resonanceCustomTween;
+        };
+
+        tweens.push(getResonanceCustomTween);
+      } else {
+        _this.setState(function () {
+          var _ref6;
+
+          return _ref6 = {}, _ref6[stateKey] = val, _ref6;
+        });
+        // This assures any existing transitions are stopped
+        tweens.push(_tween2.default.call(_this, null, stateKey, val));
+      }
+    }
+
+    var timingConfig = _extends({}, preset, timing, { time: (0, _d3Timer.now)() });
+    (0, _schedule2.default)(_this, stateKey, newId(), timingConfig, tweens, events);
+  });
+}
+
+function transition(config) {
+  var _this2 = this;
+
+  if (Array.isArray(config)) {
+    config.forEach(function (c) {
+      scheduleTransitions.call(_this2, c);
+    });
+  } else {
+    scheduleTransitions.call(this, config);
+  }
+}
+
+/***/ }),
+/* 794 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //  weak
+
+
+exports.getInterpolator = getInterpolator;
+
+exports.default = function (nameSpace, attr, value) {
+  return getTween.call(this, nameSpace, attr, value);
+};
+
+var _d3Interpolate = __webpack_require__(18);
+
+function getInterpolator(attr) {
+  if (attr === 'transform') {
+    return _d3Interpolate.interpolateTransformSvg;
+  }
+
+  return _d3Interpolate.interpolate;
+}
+
+function getTween(nameSpace, attr, value1) {
+  return function tween() {
+    var _this = this;
+
+    var value0 = nameSpace ? this.state[nameSpace][attr] : this.state[attr];
+
+    if (value0 === value1) {
+      return null;
+    }
+
+    var i = getInterpolator(attr)(value0, value1);
+
+    var stateTween = void 0;
+
+    if (nameSpace === null) {
+      stateTween = function stateTween(t) {
+        _this.setState(function () {
+          var _ref;
+
+          return _ref = {}, _ref[attr] = i(t), _ref;
+        });
+      };
+    } else {
+      stateTween = function stateTween(t) {
+        _this.setState(function (state) {
+          var _extends2, _ref2;
+
+          return _ref2 = {}, _ref2[nameSpace] = _extends({}, state[nameSpace], (_extends2 = {}, _extends2[attr] = i(t), _extends2)), _ref2;
+        });
+      };
+    }
+
+    return stateTween;
+  };
+}
+
+/***/ }),
+/* 795 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //  weak
+/* eslint no-use-before-define: "off" */
+// Apapted from https://github.com/d3/d3-transition/blob/master/src/transition/schedule.js
+
+exports.default = function (node, stateKey, id, timing, tweens) {
+  var events = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : {};
+
+  var schedules = node.TRANSITION_SCHEDULES;
+  if (!schedules) {
+    node.TRANSITION_SCHEDULES = {}; // eslint-disable-line no-param-reassign
+  } else if (id in schedules) {
+    return;
+  }
+
+  var config = _extends({ stateKey: stateKey, events: events, tweens: tweens }, timing, { timer: null, state: CREATED });
+  create(node, id, config);
+};
+
+var _d3Timer = __webpack_require__(62);
+
+var CREATED = 0;
+var SCHEDULED = 1;
+var STARTING = 2;
+var STARTED = 3;
+var RUNNING = 4;
+var ENDING = 5;
+var ENDED = 6;
+
+function create(node, id, config) {
+  var schedules = node.TRANSITION_SCHEDULES;
+
+  // Initialize the transition timer when the transition is created.
+  // Note the actual delay is not known until the first callback!
+  var transition = _extends({}, config);
+  var n = transition.tweens.length;
+  var tweens = new Array(n);
+
+  schedules[id] = transition;
+  transition.timer = (0, _d3Timer.timer)(schedule, 0, transition.time);
+
+  function schedule(elapsed) {
+    transition.state = SCHEDULED;
+    transition.timer.restart(start, transition.delay, transition.time);
+
+    // If the elapsed delay is less than our first sleep, start immediately.
+    if (transition.delay <= elapsed) {
+      start(elapsed - transition.delay);
+    }
+  }
+
+  function start(elapsed) {
+    // eslint-disable-line consistent-return
+    // If the state is not SCHEDULED, then we previously errored on start.
+    if (transition.state !== SCHEDULED) return stop();
+
+    for (var sid in schedules) {
+      // eslint-disable-line
+      var s = schedules[sid];
+
+      if (s.stateKey !== transition.stateKey) {
+        continue; // eslint-disable-line no-continue
+      }
+
+      // While this element already has a starting transition during this frame,
+      // defer starting an interrupting transition until that transition has a
+      // chance to tick (and possibly end); see d3/d3-transition#54!
+      if (s.state === STARTED) return (0, _d3Timer.timeout)(start);
+
+      // 1. Interrupt the active transition, if any. dispatch the interrupt event.
+      // 2. Cancel any pre-empted transitions. No interrupt event is dispatched
+      // because the cancelled transitions never started. Note that this also
+      // removes this transition from the pending list!
+
+      if (s.state === RUNNING) {
+        s.state = ENDED;
+        s.timer.stop();
+        if (s.events.interrupt && typeof s.events.interrupt === 'function') {
+          s.events.interrupt.call(this);
+        }
+        delete schedules[sid];
+      } else if (+sid < id) {
+        s.state = ENDED;
+        s.timer.stop();
+        delete schedules[sid];
+      }
+    }
+
+    // Defer the first tick to end of the current frame; see d3/d3#1576.
+    // Note the transition may be canceled after start and before the first tick!
+    // Note this must be scheduled before the start event; see d3/d3-transition#16!
+    // Assuming this is successful, subsequent callbacks go straight to tick.
+    (0, _d3Timer.timeout)(function () {
+      if (transition.state === STARTED) {
+        transition.state = RUNNING;
+        transition.timer.restart(tick, transition.delay, transition.time);
+        tick(elapsed);
+      }
+    });
+
+    transition.state = STARTING;
+    if (transition.events.start && typeof transition.events.start === 'function') {
+      transition.events.start.call(node);
+    }
+
+    if (transition.state !== STARTING) {
+      // interrupted
+      return; // eslint-disable-line consistent-return
+    }
+
+    transition.state = STARTED;
+
+    // Initialize the tween, deleting null tween.
+    var j = -1;
+
+    for (var i = 0; i < n; ++i) {
+      var res = transition.tweens[i].call(node);
+
+      if (res) {
+        tweens[++j] = res;
+      }
+    }
+
+    tweens.length = j + 1;
+  }
+
+  function tick(elapsed) {
+    var t = 1;
+
+    if (elapsed < transition.duration) {
+      t = transition.ease.call(null, elapsed / transition.duration);
+    } else {
+      transition.timer.restart(stop);
+      transition.state = ENDING;
+    }
+
+    var i = -1;
+
+    while (++i < tweens.length) {
+      tweens[i].call(null, t);
+    }
+
+    if (transition.state === ENDING) {
+      if (transition.events.end && typeof transition.events.end === 'function') {
+        transition.events.end.call(node);
+      }
+      stop();
+    }
+  }
+
+  function stop() {
+    transition.state = ENDED;
+    transition.timer.stop();
+
+    delete schedules[id];
+    for (var i in schedules) {
+      return;
+    } // eslint-disable-line guard-for-in, no-restricted-syntax
+    delete node.TRANSITION_SCHEDULES; // eslint-disable-line no-param-reassign
+  }
+}
+
+/***/ }),
+/* 796 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.default = stop;
+//  weak
+
+function stop() {
+  var ts = this.TRANSITION_SCHEDULES;
+
+  if (ts) {
+    Object.keys(ts).forEach(function (s) {
+      ts[s].timer.stop();
+    });
+  }
+}
 
 /***/ })
 /******/ ]);

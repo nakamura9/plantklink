@@ -97,32 +97,8 @@ class Label extends React.Component{
     cy - lower left corner position y value
     value- the label value 
     */
-    polarToCartesian(cx, cy, r, angleDeg){
-        /*
-        Converts polar form to cartesian form. Polar form consists of an
-        angle and a magnitude. these are measured from center r
-        Function returns an object of x and y values for pixels. */
-        var angleInRad = (angleDeg) * Math.PI / 180;
-        return {
-                x: cx + (r * Math.cos(angleInRad)),
-                y: cy + (r * Math.sin(angleInRad))
-            };
-    }
-
-
-    markerPoints(){
-        var end = this.polarToCartesian(this.props.cx, this.props.cy, 10, this.props.angle);
-        return ({
-            x: this.props.cx,
-            y: this.props.cy,
-            xx: end.x,
-            yy: end.y
-        })
-    }
-
+    
     render(){
-        let linePoints = this.markerPoints(); 
-        //<line x1={linePoints.x} y1={linePoints.y} x2={linePoints.xx} y2={linePoints.yy} stroke={this.props.color} strokeWidth={5} />
         return(
             <g transform={"rotate(" + this.props.angle + "," + this.props.cx + "," + this.props.cy + ")"}>
                 <text transform={"rotate("+ (-this.props.angle) + ",24,"+ this.props.cy +")"} fontSize="16" fill={this.props.color}  x={16} y={this.props.cy + 6}>{this.props.value}</text>
@@ -192,7 +168,11 @@ class Scale extends React.Component{
             var coords =this.polarToCartesian(this.cx, this.cy, 
                     this.cx -2, angleDeg)
 
-            var label = (<Label key={"dial-label-" + i} color={this.props.color} cy={this.props.height /2} cx={this.props.height / 2} value={this.props.rangeLower + (i * resolution)} angle={angleDeg} />)
+            var label = (<Label key={"dial-label-" + i} 
+                                color={this.props.color} 
+                                cy={this.props.height /2} 
+                                cx={this.props.height / 2} 
+                                value={this.props.rangeLower + (i * resolution)}angle={angleDeg} />);
             labels.push(label);
         }
         return labels;
@@ -254,7 +234,7 @@ class Needle extends React.Component {
         var polyPoints = center.x + "," + (center.y - center.delta) + " " + center.x + "," + (center.y + center.delta) + " 0," + center.y;
         
         return(
-            <g >
+            <g>
             <polygon points={polyPoints} style={{fill:this.props.color, strokeColor:this.props.color}}/>
                 <circle cx={center.x} cy={center.y} r={this.props.height / 10} fill={this.props.color} />
             </g>

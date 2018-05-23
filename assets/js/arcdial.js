@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import * as d3 from 'd3';
+import Animate from 'react-move/Animate';
 
 class ArcDial extends Component{
     constructor(props){
@@ -96,26 +97,12 @@ class ArcDial extends Component{
 class Arc extends Component{
     constructor(props){
         super(props);
+        this.radius = this.props.x - (this.props.arcThickness / 2);
+        this.initPathD = this.props.svgArc(this.props.x, this.props.y, this.radius, 0, 0);
         this.state = {
-            value:  0
+            value:  0,
+            d: this.initPathD
         };
-    }
-
-    manualAnimation(start, stop, duration){
-        var increment = (stop - start) / 60;
-        var i;
-        var node = ReactDOM.findDOMNode(this);
-        
-        for(i=0; i < 60; i++){
-            let curr = start + (increment * i);
-            let radius = this.props.x - (this.props.arcThickness / 2);
-            let pathD = this.props.svgArc(this.props.x, this.props.y, radius, 0, curr);
-            let update = (pathD, node) => {
-                d3.select(node)
-                .attr("d", pathD);
-            }
-            setTimeout(update, duration / 60, pathD, node);
-        }
     }
 
     tick(){
@@ -123,10 +110,10 @@ class Arc extends Component{
         var oldAngle = this.state.value * increment;
         var val = this.props.getVal();
         var angle = increment * val;
+        let pathD = this.props.svgArc(this.props.x, this.props.y, this.radius, 0, angle);
         this.setState({value: val,
+                        d: pathD
                         });
-        this.manualAnimation(oldAngle, angle, 1000);
-            
     }
 
     componentDidMount(){
@@ -139,7 +126,23 @@ class Arc extends Component{
 
     render(){ 
         return(
-            <path d={this.state.d} stroke={this.props.color} strokeWidth={this.props.arcThickness} fill="none" />
+            <Animate start={() =>({
+                value: 0,
+                d: this.initPathD
+            })} 
+                update={() =>({
+                    value: this.state.value,
+                    d: this.state.d,
+                    timing: {duration: 500,
+                            ease: d3.easeBackOut}
+                })} >
+                {(state) => {
+                    return(
+                        <path d={this.state.d} stroke={this.props.color} strokeWidth={this.props.arcThickness} fill="none" />
+                    );
+                }}
+        </Animate>
+            
         );
     }
 }
