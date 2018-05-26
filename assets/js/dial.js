@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 import * as d3 from 'd3';
+import Animate from 'react-move/Animate';
+
+//bug with initial position of widget
 
 class DialWidget extends React.Component{
     /* 
@@ -21,22 +24,15 @@ class DialWidget extends React.Component{
     constructor(props){
         //the angle determines the position of the needle
         super(props);
+        this.valRange = this.props.rangeUpper - this.props.rangeLower;
         this.state= {angle: 0,
                     currValue: 0};
     }
 
     currValue(){
-        //converts the angle to a numerical input value
-        /*$.ajax({
-            url: '/ajax/get',
-            method: 'GET',
-            success: (resp) => {
-                this.setState({currValue: resp});
-            }
-        });
-        */
-        this.setState({currValue: Math.floor(Math.random() * 10)});
-        return this.state.currValue;
+        
+       var val = Math.floor(Math.random() * this.valRange);
+        this.setState({currValue:  this.props.rangeLower + val});
     }
 
     
@@ -48,14 +44,13 @@ class DialWidget extends React.Component{
         this.currValue();
         
         //obtain an angle that corresponds to that value
-        var angle = (this.state.currValue / 
-            (this.props.rangeUpper - this.props.rangeLower)) * 
-                this.props.scaleAngle;
+        var angle = ((this.state.currValue - this.props.rangeLower) / 
+                        this.valRange) * this.props.scaleAngle;
         
         this.setState({
             angle: angle 
         });        
-        return this.state.angle;
+        return angle;
     }
 
     render(){
@@ -195,9 +190,19 @@ class Scale extends React.Component{
 class Needle extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            x: 0,
+        this.center = {
+            x:this.props.width / 2,
             y: this.props.height / 2,
+            delta: this.props.height / 10
+        }
+
+        this.polyPoints = this.center.x + "," + 
+                        (this.center.y - this.center.delta) + 
+                        " " + this.center.x + "," + 
+                        (this.center.y + this.center.delta) + 
+                        " 0," + this.center.y;
+
+        this.state = {
             angle: this.props.parentState()
         }
     }
@@ -214,30 +219,35 @@ class Needle extends React.Component {
 
     translate(){
         //call only once
+        
         this.setState({angle: this.props.parentState()});
-        let needle = d3.select(ReactDOM.findDOMNode(this));
+        /*let needle = d3.select(ReactDOM.findDOMNode(this));
         let tween = (d, i, a) => {
             return d3.interpolateString(a, "rotate(" + this.state.angle + ", "+  (this.props.width / 2) +", "+ (this.props.height / 2) +")");
         }
         needle.transition()
             .duration(800)
-            .attrTween("transform", tween);   
+            .attrTween("transform", tween);*/   
         }
         
-    render(){
-        var center = {
-            x:this.props.width / 2,
-            y: this.props.height / 2,
-            delta: this.props.height / 10
-        }
-
-        var polyPoints = center.x + "," + (center.y - center.delta) + " " + center.x + "," + (center.y + center.delta) + " 0," + center.y;
-        
+    render(){  
         return(
-            <g>
-            <polygon points={polyPoints} style={{fill:this.props.color, strokeColor:this.props.color}}/>
-                <circle cx={center.x} cy={center.y} r={this.props.height / 10} fill={this.props.color} />
+            <Animate start={() => ({
+                angle: 0
+            })} update={() => ({
+                angle: this.state.angle,
+                timing: {duration: 1000,
+                        ease: d3.easeBackOut}
+            })}>
+                {(state) =>{
+                    return(
+                        <g transform={"rotate(" + state.angle + "," + this.center.x + "," + this.center.y + ")"}>
+            <polygon points={this.polyPoints} style={{fill:this.props.color, strokeColor:this.props.color}}/>
+                <circle cx={this.center.x} cy={this.center.y} r={this.props.height / 10} fill={this.props.color} />
             </g>
+                    );
+                }}
+            </Animate>
         );
     }       
 }

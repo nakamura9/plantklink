@@ -41704,6 +41704,10 @@ var _d = __webpack_require__(36);
 
 var d3 = _interopRequireWildcard(_d);
 
+var _Animate = __webpack_require__(790);
+
+var _Animate2 = _interopRequireDefault(_Animate);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -41713,6 +41717,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+//bug with initial position of widget
 
 var DialWidget = function (_React$Component) {
     _inherits(DialWidget, _React$Component);
@@ -41737,6 +41743,7 @@ var DialWidget = function (_React$Component) {
         //the angle determines the position of the needle
 
 
+        _this.valRange = _this.props.rangeUpper - _this.props.rangeLower;
         _this.state = { angle: 0,
             currValue: 0 };
         return _this;
@@ -41745,17 +41752,9 @@ var DialWidget = function (_React$Component) {
     _createClass(DialWidget, [{
         key: 'currValue',
         value: function currValue() {
-            //converts the angle to a numerical input value
-            /*$.ajax({
-                url: '/ajax/get',
-                method: 'GET',
-                success: (resp) => {
-                    this.setState({currValue: resp});
-                }
-            });
-            */
-            this.setState({ currValue: Math.floor(Math.random() * 10) });
-            return this.state.currValue;
+
+            var val = Math.floor(Math.random() * this.valRange);
+            this.setState({ currValue: this.props.rangeLower + val });
         }
     }, {
         key: 'getAngle',
@@ -41767,12 +41766,12 @@ var DialWidget = function (_React$Component) {
             this.currValue();
 
             //obtain an angle that corresponds to that value
-            var angle = this.state.currValue / (this.props.rangeUpper - this.props.rangeLower) * this.props.scaleAngle;
+            var angle = (this.state.currValue - this.props.rangeLower) / this.valRange * this.props.scaleAngle;
 
             this.setState({
                 angle: angle
             });
-            return this.state.angle;
+            return angle;
         }
     }, {
         key: 'render',
@@ -41955,9 +41954,15 @@ var Needle = function (_React$Component4) {
 
         var _this4 = _possibleConstructorReturn(this, (Needle.__proto__ || Object.getPrototypeOf(Needle)).call(this, props));
 
-        _this4.state = {
-            x: 0,
+        _this4.center = {
+            x: _this4.props.width / 2,
             y: _this4.props.height / 2,
+            delta: _this4.props.height / 10
+        };
+
+        _this4.polyPoints = _this4.center.x + "," + (_this4.center.y - _this4.center.delta) + " " + _this4.center.x + "," + (_this4.center.y + _this4.center.delta) + " 0," + _this4.center.y;
+
+        _this4.state = {
             angle: _this4.props.parentState()
         };
         return _this4;
@@ -41980,32 +41985,43 @@ var Needle = function (_React$Component4) {
     }, {
         key: 'translate',
         value: function translate() {
-            var _this6 = this;
-
             //call only once
+
             this.setState({ angle: this.props.parentState() });
-            var needle = d3.select(_reactDom2.default.findDOMNode(this));
-            var tween = function tween(d, i, a) {
-                return d3.interpolateString(a, "rotate(" + _this6.state.angle + ", " + _this6.props.width / 2 + ", " + _this6.props.height / 2 + ")");
-            };
-            needle.transition().duration(800).attrTween("transform", tween);
+            /*let needle = d3.select(ReactDOM.findDOMNode(this));
+            let tween = (d, i, a) => {
+                return d3.interpolateString(a, "rotate(" + this.state.angle + ", "+  (this.props.width / 2) +", "+ (this.props.height / 2) +")");
+            }
+            needle.transition()
+                .duration(800)
+                .attrTween("transform", tween);*/
         }
     }, {
         key: 'render',
         value: function render() {
-            var center = {
-                x: this.props.width / 2,
-                y: this.props.height / 2,
-                delta: this.props.height / 10
-            };
-
-            var polyPoints = center.x + "," + (center.y - center.delta) + " " + center.x + "," + (center.y + center.delta) + " 0," + center.y;
+            var _this6 = this;
 
             return _react2.default.createElement(
-                'g',
-                null,
-                _react2.default.createElement('polygon', { points: polyPoints, style: { fill: this.props.color, strokeColor: this.props.color } }),
-                _react2.default.createElement('circle', { cx: center.x, cy: center.y, r: this.props.height / 10, fill: this.props.color })
+                _Animate2.default,
+                { start: function start() {
+                        return {
+                            angle: 0
+                        };
+                    }, update: function update() {
+                        return {
+                            angle: _this6.state.angle,
+                            timing: { duration: 1000,
+                                ease: d3.easeBackOut }
+                        };
+                    } },
+                function (state) {
+                    return _react2.default.createElement(
+                        'g',
+                        { transform: "rotate(" + state.angle + "," + _this6.center.x + "," + _this6.center.y + ")" },
+                        _react2.default.createElement('polygon', { points: _this6.polyPoints, style: { fill: _this6.props.color, strokeColor: _this6.props.color } }),
+                        _react2.default.createElement('circle', { cx: _this6.center.x, cy: _this6.center.y, r: _this6.props.height / 10, fill: _this6.props.color })
+                    );
+                }
             );
         }
     }]);
@@ -42175,7 +42191,10 @@ var Arc = function (_Component2) {
         _this2.initPathD = _this2.props.svgArc(_this2.props.x, _this2.props.y, _this2.radius, 0, 0);
         _this2.state = {
             value: 0,
-            d: _this2.initPathD
+            prevD: _this2.initPathD,
+            d: _this2.initPathD,
+            prevAngle: 0,
+            angle: 0
         };
         return _this2;
     }
@@ -42185,11 +42204,16 @@ var Arc = function (_Component2) {
         value: function tick() {
             var increment = this.props.angleExtent / this.props.rangeUpper;
             var oldAngle = this.state.value * increment;
+            var oldD = this.state.d;
             var val = this.props.getVal();
             var angle = increment * val;
             var pathD = this.props.svgArc(this.props.x, this.props.y, this.radius, 0, angle);
+
             this.setState({ value: val,
-                d: pathD
+                prevD: oldD,
+                d: pathD,
+                prevAngle: oldAngle,
+                angle: angle
             });
         }
     }, {
@@ -42207,6 +42231,11 @@ var Arc = function (_Component2) {
             clearInterval(this.ticker);
         }
     }, {
+        key: 'interpolator',
+        value: function interpolator() {
+            // try and implement
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this4 = this;
@@ -42222,13 +42251,12 @@ var Arc = function (_Component2) {
                     update: function update() {
                         return {
                             value: _this4.state.value,
-                            d: _this4.state.d,
-                            timing: { duration: 500,
-                                ease: d3.easeBackOut }
+                            d: d3.interpolateString(_this4.state.prevD, _this4.state.d),
+                            timing: { duration: 200 }
                         };
                     } },
                 function (state) {
-                    return _react2.default.createElement('path', { d: _this4.state.d, stroke: _this4.props.color, strokeWidth: _this4.props.arcThickness, fill: 'none' });
+                    return _react2.default.createElement('path', { d: state.d, stroke: _this4.props.color, strokeWidth: _this4.props.arcThickness, fill: 'none' });
                 }
             );
         }

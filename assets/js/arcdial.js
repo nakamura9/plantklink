@@ -101,18 +101,26 @@ class Arc extends Component{
         this.initPathD = this.props.svgArc(this.props.x, this.props.y, this.radius, 0, 0);
         this.state = {
             value:  0,
-            d: this.initPathD
+            prevD: this.initPathD,
+            d: this.initPathD,
+            prevAngle: 0,
+            angle: 0
         };
     }
 
     tick(){
         var increment = this.props.angleExtent / this.props.rangeUpper;
         var oldAngle = this.state.value * increment;
+        var oldD = this.state.d;
         var val = this.props.getVal();
         var angle = increment * val;
         let pathD = this.props.svgArc(this.props.x, this.props.y, this.radius, 0, angle);
+        
         this.setState({value: val,
-                        d: pathD
+                        prevD: oldD,
+                        d: pathD,
+                        prevAngle: oldAngle,
+                        angle: angle
                         });
     }
 
@@ -123,22 +131,24 @@ class Arc extends Component{
     componentWillUnmount(){
         clearInterval(this.ticker);
     }
-
+    interpolator(){
+        // try and implement
+    }
     render(){ 
         return(
             <Animate start={() =>({
                 value: 0,
                 d: this.initPathD
             })} 
-                update={() =>({
+                update={() =>
+                    ({
                     value: this.state.value,
-                    d: this.state.d,
-                    timing: {duration: 500,
-                            ease: d3.easeBackOut}
+                    d: d3.interpolateString(this.state.prevD, this.state.d),
+                    timing: {duration: 200}
                 })} >
                 {(state) => {
                     return(
-                        <path d={this.state.d} stroke={this.props.color} strokeWidth={this.props.arcThickness} fill="none" />
+                        <path d={state.d} stroke={this.props.color} strokeWidth={this.props.arcThickness} fill="none" />
                     );
                 }}
         </Animate>
