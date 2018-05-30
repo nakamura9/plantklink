@@ -7,6 +7,7 @@ module.exports = {
     entry:  {
         main: './assets/js/index',
         dashboard: './assets/js/dashboard/dash_index',
+        scada: './assets/js/scada/creator',
         running_dash: './assets/js/running_dash/dash_index'
     },
     

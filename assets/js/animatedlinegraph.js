@@ -36,7 +36,7 @@ class AnimatedLineChart extends React.Component{
                 {this.props.shaded ? 
                     <ShadedLine color={this.props.fgColor} xscale={this.xscale.bind(this)} yscale={this.yscale.bind(this)} ymax={this.props.ymax} xmax={this.props.xmax}/>
                     :
-                    <Line color={this.props.fgColor} xscale={this.xscale.bind(this)} yscale={this.yscale.bind(this)} ymax={this.props.ymax} xmax={this.props.xmax}/>
+                    <Line color={this.props.fgColor} xscale={this.xscale.bind(this)} yscale={this.yscale.bind(this)} range={this.props.xmax - this.props.xmin} ymax={this.props.ymax} xmax={this.props.xmax}/>
                 }
                 
             </svg>
@@ -104,7 +104,7 @@ class Line extends React.Component{
                 .attr("class", "line")
                 .attr("d", this.line);
         var val;
-        val = Math.floor(Math.random() * 10); 
+        val = Math.floor(Math.random() * this.props.range); 
         
         let temp = this.state.data;
         if(this.state.data.length > this.props.xmax){

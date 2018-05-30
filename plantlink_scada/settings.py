@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'svg_widgets',
     'webpack_loader',
     'dashboard',
+    'scada',
     'rest_framework'
 ]
 

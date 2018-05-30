@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^ajax/', include("ajax.urls", namespace="ajax")),
     url(r'^widgets/', include('svg_widgets.urls', namespace='widgets')),
     url(r'^dashboard/', include('dashboard.urls', namespace='dashboard')),
+    url(r'^scada/', include('scada.urls', namespace='scada')),
 ] + static.static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
