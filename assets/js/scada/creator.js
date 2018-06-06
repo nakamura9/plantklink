@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Window from './design_window';
+import App from './design_window';
 
-ReactDOM.render(<Window />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
